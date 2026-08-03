@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Football Club</title>
+  <style>
+
+/* =========================
+   1) QUICK THEME SETTINGS
+   Change these colors first.
+   ========================= */
+:root{
+  --main:#18a16d;
+  --soft:#eaf8f1;
+  --ink:#173529;
+  --muted:#5a7168;
+  --line:#c9e4d7;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--soft);font-family:Inter,Arial,sans-serif}
+.page{width:min(1000px,90%);margin:auto}
+
+/* =========================
+   2) NAVBAR
+   Add or remove simple <li> items in the HTML.
+   ========================= */
+nav{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:24px 0}
+.logo{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;font-size:20px;text-decoration:none;white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border:2px solid var(--ink);border-radius:12px;background:white;color:var(--main);box-shadow:4px 4px 0 var(--main)}
+.nav-links{display:flex;align-items:center;gap:24px;margin:0;padding:0;list-style:none}
+.nav-links a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:700}
+.nav-links a:hover{color:var(--main)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:45px 0 70px}
+.tag{color:var(--main);font-weight:800;letter-spacing:2px;font-size:12px}
+h1{margin:12px 0;font-size:clamp(48px,8vw,82px);line-height:.95;letter-spacing:-3px}
+.intro{color:var(--muted);font-size:18px;line-height:1.7}
+.cta{display:inline-flex;align-items:center;gap:9px;border:0;border-radius:99px;padding:14px 22px;color:white;background:var(--main);font-weight:800;text-decoration:none;cursor:pointer}
+.button-icon{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.photo{width:100%;height:500px;object-fit:cover;border:3px solid var(--ink);border-radius:28px;background:white;box-shadow:10px 10px 0 var(--main)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:60px}
+.card{padding:22px;background:white;border:2px solid var(--ink);border-radius:18px}
+.icon-box{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--soft);color:var(--main);border:1px solid var(--line)}
+.icon{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h2{margin:14px 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted);line-height:1.6}
+footer{padding:22px 0 35px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+
+@media(max-width:700px){
+  nav{align-items:flex-start;flex-direction:column;gap:18px}
+  .nav-links{width:100%;gap:16px;overflow-x:auto;padding-bottom:4px}
+  .nav-links li{flex:0 0 auto}
+  .hero{grid-template-columns:1fr;padding-top:28px}
+  .photo{height:380px}
+  .cards{grid-template-columns:1fr}
+  h1{letter-spacing:-2px}
+}
+
+  </style>
+</head>
+<body>
+  <div class="page" id="home">
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#home">
+        <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2.2-1.1 3.5h-3.8L9 9.2 12 7ZM6.2 9.1l2.8.1M5.5 15l3-2.3M9.5 20l.6-7.3M14.5 20l-.6-7.3M18.5 15l-3-2.3M17.8 9.1l-2.8.1"/></svg></span>
+        GREEN GOAL
+      </a>
+
+      <!-- NAVBAR: duplicate, rename or delete any <li> below -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">The sport</a></li>
+        <li><a href="#facts">Team basics</a></li>
+      </ul>
+    </nav>
+
+    <main class="hero" id="about">
+      <section>
+        <div class="tag">PASS · PLAY · TOGETHER</div>
+        <h1>One team.<br>One goal.</h1>
+        <p class="intro">Football is a fast, creative team sport. Great players communicate, move into space and help one another from kickoff to the final whistle.</p>
+        <a class="cta" href="#facts">Join the team <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M7 14l5 5 5-5"/></svg></a>
+      </section>
+
+      <!-- IMAGE: replace only the src link below -->
+      <img class="photo" src="https://images.unsplash.com/photo-1757340346960-2382a52d0d5e?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Football players entering a stadium field">
+    </main>
+
+    <!-- CARDS: duplicate, edit or delete any <article class="card"> -->
+    <section class="cards" id="facts">
+    <article class="card">
+      <div class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 3 2.2-1.1 3.5h-3.8L9 9.2 12 7ZM6.2 9.1l2.8.1M5.5 15l3-2.3M9.5 20l.6-7.3M14.5 20l-.6-7.3M18.5 15l-3-2.3M17.8 9.1l-2.8.1"/></svg></div>
+      <h2>Control</h2>
+      <p>Keep the ball close and prepare your next move.</p>
+    </article>
+    <article class="card">
+      <div class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5A4.5 4.5 0 0 1 8 13h2a4.5 4.5 0 0 1 4.5 4.5V19"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14h1.8a3.7 3.7 0 0 1 3.7 3.7V19"/></svg></div>
+      <h2>Pass</h2>
+      <p>Share the ball to move the whole team forward.</p>
+    </article>
+    <article class="card">
+      <div class="icon-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/><path d="m15 9 5-5M17 4h3v3"/></svg></div>
+      <h2>Shoot</h2>
+      <p>Pick your moment and aim away from the keeper.</p>
+    </article>
+    </section>
+
+    <footer>Beginner sports website · Photo via Unsplash</footer>
+  </div>
+</body>
+</html>
